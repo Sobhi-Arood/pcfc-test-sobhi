@@ -24,7 +24,7 @@ export function DrawerContent(props) {
                 size={size}
               />
             )}
-            label='Employee'
+            label='Add Employee'
             onPress={() => props.navigation.navigate('Employee')}
           />
         </Drawer.Section>
