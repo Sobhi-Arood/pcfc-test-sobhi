@@ -10,8 +10,9 @@ const RightContent = () => (
   />
 );
 
-const ListCard = ({ title, subtitle, onPress }) => (
+const ListCard = ({ title, subtitle, onPress, image }) => (
   <Card onPress={onPress}>
+    <Card.Cover source={{ uri: image }} />
     <Card.Title title={title} subtitle={subtitle} right={RightContent} />
   </Card>
 );

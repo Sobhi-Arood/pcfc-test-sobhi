@@ -10,7 +10,7 @@ import { getEmployeesList } from '../../logic/actions';
 const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   const employeesState = useSelector((state) => state);
-  const { employees, loading, error } = employeesState;
+  const { employees, loading, error, image } = employeesState;
   const keyExtractor = (item, index) => index.toString();
 
   const renderItem = ({ item }) => (
@@ -18,6 +18,7 @@ const HomeScreen = ({ navigation }) => {
       title={`${item.firstName} ${item.lastName}`}
       subtitle={item.department}
       onPress={() => navigation.navigate('Employee', { id: item.id })}
+      image={image}
     />
   );
 

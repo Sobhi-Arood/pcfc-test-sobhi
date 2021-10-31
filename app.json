@@ -3,6 +3,7 @@
     "name": "pcfc-test-sobhi",
     "slug": "pcfc-test-sobhi",
     "version": "1.0.0",
+    "owner": "sobhi-aro",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

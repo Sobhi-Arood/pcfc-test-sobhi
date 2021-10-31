@@ -13,6 +13,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const initialState = {
   employees: [],
+  image: '',
   loading: false,
   error: false,
 };
@@ -29,6 +30,7 @@ const employeesReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         employees: action.employees,
+        image: action.image,
       };
     case GET_EMPLOYEES_LIST_FAIL:
       return {

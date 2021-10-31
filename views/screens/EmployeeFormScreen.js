@@ -140,13 +140,18 @@ const EmployeeFormScreen = ({ route, navigation }) => {
 
   const handleConfirm = (date) => {
     if (data.isModalDOBOpen) {
-      setData({
-        ...data,
-        dob: date.toLocaleDateString('fr', dateFormat),
-        isDOBValid: true,
-        isModalDOBOpen: false,
-        isModalDOJOpen: false,
-      });
+      const currentYear = new Date();
+      if (date.getFullYear() < currentYear.getFullYear()) {
+        setData({
+          ...data,
+          dob: date.toLocaleDateString('fr', dateFormat),
+          isDOBValid: true,
+          isModalDOBOpen: false,
+          isModalDOJOpen: false,
+        });
+      } else {
+        Alert.alert('Please choose a correct date');
+      }
     }
     if (data.isModalDOJOpen) {
       setData({
@@ -157,6 +162,7 @@ const EmployeeFormScreen = ({ route, navigation }) => {
         isModalDOJOpen: false,
       });
     }
+
     hideDatePicker();
   };
 
